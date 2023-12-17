@@ -1,0 +1,412 @@
+/* Global Styles */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* Header */
+.header{
+    background: #111;
+}
+.header header{
+    width:100%;
+    height:120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 60px ;
+}
+.header header .logo img{
+    width:100px;
+    border-radius: 50%;
+}
+.header header .hamburger{
+    display:none;
+}
+.header header .navBar ul{
+    display: flex;
+}
+.header header .navBar ul li a{
+    display:block;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 50px;
+    transition: 0.2s;
+    margin:0 5px;
+    text-decoration:none;
+
+}
+.header header .navBar ul li a:hover{
+    font-weight: 500;
+    color: #000;
+    background: #8edbff;
+}
+.header header .navBar ul li a.active{
+    color: #000;
+    background: #8edbff;
+}
+
+/* Contact Us */
+.contactUs{
+    position: relative;
+    min-height: 100vh;
+    padding:50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url(../Assets/car1.png);
+    background-size: cover;
+}
+.contactUs:after {
+    content: "";
+    background-color: rgb(50, 50, 50, 0.5);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    
+}
+.contactUs .content{
+    max-width: 800px;
+    text-align: center;
+    z-index: 1;
+}
+.contactUs .content h2{
+    font-size: 36px;
+    font-weight: 500px;
+    color: #fff;
+}
+.contactUs .content p{
+    font-weight: 300px;
+    color: #fff;
+}
+.contactUs .infoContainer{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    z-index: 1;
+}
+.contactUs .infoContainer .contactInfo{
+    width:50%;
+    display:flex;
+    flex-direction: column;
+}
+.contactUs .infoContainer .contactInfo .box{
+    position: relative;
+    padding:20px 0;
+    display:flex;
+}
+.contactUs .infoContainer .contactInfo .box .icons{
+    min-width: 60px;
+    height:60px;
+    background:#fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 22px;
+}
+.contactUs .infoContainer .contactInfo .box .text{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    font-size: 16px;
+    color:#fff;
+    font-weight: 300;
+
+}
+.contactUs .infoContainer .contactInfo .box .text h3{
+    font-weight: 500;
+    color: #8edbff;
+}
+.contactUs .infoContainer .contactInfo .box .text a{
+    color: #fff;
+}
+.contactUs .infoContainer .contactForm{
+    width:40%;
+    padding: 40px;
+    background: #fff;
+    border-radius: 5px;
+}
+.contactUs .infoContainer .contactForm h2{
+    font-size: 30px;
+    color: #333;
+    font-weight: 500px;
+}
+.contactUs .infoContainer .contactForm .inputBox{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+.contactUs .infoContainer .contactForm .inputBox input,
+.contactUs .infoContainer .contactForm .inputBox textarea{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline:none;
+    resize: none;
+    transition: border-color 0.2s ease; 
+}
+.contactUs .infoContainer .contactForm .inputBox span{
+    position: absolute;
+    left:0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+    color: #666;
+}
+
+.contactUs .infoContainer .contactForm .inputBox input:focus ~ span,
+.contactUs .infoContainer .contactForm .inputBox textarea:focus ~ span,
+.contactUs .infoContainer .contactForm .inputBox input:valid ~ span,
+.contactUs .infoContainer .contactForm .inputBox textarea:valid ~ span
+ {
+    color: #e91e63;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+.contactUs .infoContainer .contactForm .inputBox input[type="submit"]{
+    width:100px;
+    background: #00bcd4;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Footer */
+.footer{
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    min-height: max-content; 
+}
+footer{
+    position:relative;
+    width:100%;
+    height:auto;
+    padding:50px 100px;
+    display: flex;
+    background: #111;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+footer .footContainer{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    flex-wrap: wrap;
+}
+footer .footContainer .sec{
+    margin-right: 30px;
+}
+footer .footContainer .sec.aboutUs{
+    width:45%;
+}
+footer h2{
+    position:relative;
+    color:#fff;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+footer h2:before{
+   content:'';
+   position:absolute;
+   bottom:-5px;
+   left:0;
+   width:50px;
+   height: 2px;
+   background: #8edbff;
+   border-radius: 100px;
+}
+footer p{
+    color:#999;
+}
+footer .footContainer .social{
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+footer .footContainer .social li a{
+    display: inline-block;
+    width:40px;
+    height:40px;
+    border-radius: 10px;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer .footContainer .social li a i{
+    color: #fff;
+    font-size: 20px;
+}
+footer .footContainer .social li a:hover{
+    background-color:#8edbff;
+}
+footer .footContainer .social li a:hover i{
+    color:#000;
+}
+/* QuickLinks - Footer */
+footer .footContainer .quickLinks{
+    position: relative;
+    width:25%;
+}
+footer .footContainer .quickLinks ul li a{
+    color: #999;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+footer .footContainer .quickLinks ul li a:hover{
+    color: #fff;
+}
+/* Contact - Footer */
+footer .footContainer .contact{
+    width: calc(30% - 60px);
+    margin-right: 0px !important;
+}
+footer .footContainer .contact .info{
+    position: relative;
+
+}
+footer .footContainer .contact .info li{
+    display: flex;
+    margin-bottom: 16px;
+}
+footer .footContainer .contact .info li span:nth-child(1){
+    color: #fff;
+    font-size: 20px;
+    margin-right: 10px;
+}
+footer .footContainer .contact .info li span,footer a{
+    color:#999;
+}
+footer .footContainer .contact .info li a:hover{
+    color:#fff;
+}
+footer .businessHours{
+    margin-top: 20px;
+}
+.copyrightText{
+    width: 100%;
+    background: #181818;
+    color:#fff;
+    font-weight: 500;
+    padding: 8px 100px;
+    text-align: center;
+}
+
+/* Responsiveness */
+@media (max-width:991px){
+    /* Header */
+    .header header .hamburger{
+        display: block;
+        cursor: pointer;
+    }
+    .header header .hamburger .line{
+        width: 30px;
+        height: 3px;
+        border-radius: 50px;
+        background: #fff;
+        margin: 6px 0;
+    }
+    .header header .navBar{
+        z-index: 111111;
+        height:0;
+        position:absolute;
+        top:100px;
+        left:0;
+        right: 0;
+        width:100vw;
+        background:#111;
+        transition: 0.3s;
+    }
+    .header header .navBar.tog{
+        height: 450px;
+    }
+    .header header .navBar ul{
+        display: none;
+        text-align: center;
+        justify-content: center;
+        width: fit-content;
+        margin: 80px auto 0 auto;
+        transition: 0.5s ease-in-out;
+    }
+    .header header .navBar.tog ul{
+        display:block;
+    }
+    .header header .navBar ul li a{
+        margin-bottom: 12px;
+    }
+    /* Contact Us */
+    .contactUs{
+        padding:50px;
+    }
+    .contactUs .infoContainer{
+        flex-direction: column;
+    }
+    .contactUs .infoContainer .contactInfo{
+        width:100%;
+    }
+    .contactUs .infoContainer .contactForm{
+        width:100%;
+        margin-top: 40px;
+    }
+
+    /* Footer */
+    footer{
+        padding: 40px;
+    }
+    footer .footContainer{
+        flex-direction: column;
+    }
+    footer .footContainer .sec{
+        margin-bottom: 40px;
+        margin-right: 0px;
+    }
+    footer .footContainer .sec.aboutUs,footer .footContainer .quickLinks{
+        width:100%;
+    }
+    footer .footContainer .sec.contact{
+        width:100%;
+    }
+    footer .businessHours{
+    margin-top: 0px;
+}
+.copyrightText{
+    padding: 8px 40px;
+}
+}
+@media (max-width:401px){
+    /* Header */
+    .header header{
+        padding: 20px;
+    }
+    .header header .logo img{
+        width:90px;
+    }
+    /* Contact Us */
+    .contactUs{
+        padding:20px;
+    }
+    .contactUs .infoContainer .contactForm{
+        padding: 20px;
+    }
+}

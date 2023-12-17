@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="Assets/logo.png">
+    <title>ThankYou</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Font Awesome Cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Global Styles */
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: 'poppins', sans-serif;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        /* Header */
+        .header{
+            background: #111;
+        }
+        .header header{
+            width:100%;
+            height:120px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 60px ;
+        }
+        .header header .logo img{
+            width:100px;
+            border-radius: 50%;
+        }
+        .header header .hamburger{
+            display:none;
+        }
+        .header header .navBar ul{
+            display: flex;
+        }
+        .header header .navBar ul li a{
+            display:block;
+            color: #fff;
+            font-size: 18px;
+            padding: 10px 15px;
+            border-radius: 50px;
+            transition: 0.2s;
+            margin:0 5px;
+        }
+        .header header .navBar ul li a:hover{
+            font-weight: 500;
+            color: #000;
+            background: #0ff;
+        }
+        .header header .navBar ul li a.active{
+            color: #000;
+            background: #0ff;
+        }
+        
+        /* ThankYou */
+        .content {
+            width:100%;
+            min-height: 50vh;
+            display: flex;
+            align-items:first baseline;
+            justify-self: center;
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .thankyou-wrapper {
+            margin: auto;
+            background: #ffffff;
+            padding: 10px 0px 50px;
+            text-align: center;
+        }
+
+        .thankyou-wrapper h1 img {
+            width: 100%;
+            max-width: 400px; 
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .thankyou-wrapper p {
+            font-size: 20px;
+            color: #333333;
+            padding: 5px 10px 10px;
+        }
+
+        .thankyou-wrapper a {
+            font-size: 18px;
+            color: #ffffff;
+            display: inline-block;
+            text-decoration: none;
+            width: 150px;
+            background:#e91e63;
+            margin-top: 10px;
+            padding: 15px ;
+            border-radius: 50px;
+        }
+
+        .thankyou-wrapper a:hover {
+            background: #c90748;
+       }
+
+        /* Footer */
+        .footer{
+            display:flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-direction: column;
+            min-height: 100vh; 
+        }
+        footer{
+            position:relative;
+            width:100%;
+            height:auto;
+            padding:50px 100px;
+            display: flex;
+            background: #111;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        footer .footContainer{
+            display:flex;
+            flex-direction:row;
+            justify-content:space-between;
+            flex-wrap: wrap;
+        }
+        footer .footContainer .sec{
+            margin-right: 30px;
+        }
+        footer .footContainer .sec.aboutUs{
+            width:45%;
+        }
+        footer h2{
+            position:relative;
+            color:#fff;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        footer h2:before{
+           content:'';
+           position:absolute;
+           bottom:-5px;
+           left:0;
+           width:50px;
+           height: 2px;
+           background: rgba(0, 255, 255);
+           border-radius: 100px;
+        }
+        footer p{
+            color:#999;
+        }
+        footer .footContainer .social{
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        footer .footContainer .social li a{
+            display: inline-block;
+            width:40px;
+            height:40px;
+            border-radius: 10px;
+            background-color: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        footer .footContainer .social li a i{
+            color: #fff;
+            font-size: 20px;
+        }
+        footer .footContainer .social li a:hover{
+            background-color:rgba(0, 255, 255);
+        }
+        footer .footContainer .social li a:hover i{
+            color:#000;
+        }
+        /* QuickLinks - Footer */
+        footer .footContainer .quickLinks{
+            position: relative;
+            width:25%;
+        }
+        footer .footContainer .quickLinks ul li a{
+            color: #999;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        footer .footContainer .quickLinks ul li a:hover{
+            color: #fff;
+        }
+        /* Contact - Footer */
+        footer .footContainer .contact{
+            width: calc(30% - 60px);
+            margin-right: 0px !important;
+        }
+        footer .footContainer .contact .info{
+            position: relative;
+
+        }
+        footer .footContainer .contact .info li{
+            display: flex;
+            margin-bottom: 16px;
+        }
+        footer .footContainer .contact .info li span:nth-child(1){
+            color: #fff;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        footer .footContainer .contact .info li span,footer a{
+            color:#999;
+        }
+        footer .footContainer .contact .info li a:hover{
+            color:#fff;
+        }
+        footer .businessHours{
+            margin-top: 20px;
+        }
+        .copyrightText{
+            width: 100%;
+            background: #181818;
+            color:#fff;
+            font-weight: 500;
+            padding: 8px 100px;
+            text-align: center;
+        }
+
+        /* Responsiveness */
+        @media (max-width:991px){
+            /* Header */
+            .header header .hamburger{
+                display: block;
+                cursor: pointer;
+            }
+            .header header .hamburger .line{
+                width: 30px;
+                height: 3px;
+                border-radius: 50px;
+                background: #fff;
+                margin: 6px 0;
+            }
+            .header header .navBar{
+                z-index: 111111;
+                height:0;
+                position:absolute;
+                top:100px;
+                left:0;
+                right: 0;
+                width:100vw;
+                background:#111;
+                transition: 0.3s;
+            }
+            .header header .navBar.tog{
+                height: 450px;
+            }
+            .header header .navBar ul{
+                display: none;
+                text-align: center;
+                justify-content: center;
+                width: fit-content;
+                margin: 80px auto 0 auto;
+                transition: 0.5s ease-in-out;
+            }
+            .header header .navBar.tog ul{
+                display:block;
+            }
+            .header header .navBar ul li a{
+                margin-bottom: 12px;
+            }
+
+            /* Footer */
+            footer{
+                padding: 40px;
+            }
+            footer .footContainer{
+                flex-direction: column;
+            }
+            footer .footContainer .sec{
+                margin-bottom: 40px;
+                margin-right: 0px;
+            }
+            footer .footContainer .sec.aboutUs, .quickLinks{
+                width:100%;
+            }
+            footer .footContainer .sec.contact{
+                width:100%;
+            }
+            footer .businessHours{
+                margin-top: 0px;
+            }
+            .copyrightText{
+                padding: 8px 40px;
+            }
+        }
+        @media (max-width:401px){
+            /* Header */
+            .header header{
+                padding: 10px 40px ;
+            }
+            .header header .logo img{
+                width:90px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<section class="header">
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="Assets/logo.png" alt="logo"></a>
+        </div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="navBar">
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Clients</a></li>
+                <li><a href="#">Vehicles</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+</section>
+
+<!-- ThankYou -->
+<div class="content">
+    <div class="thankyou-wrapper">
+        <h1><img src="http://montco.happeningmag.com/wp-content/uploads/2014/11/thankyou.png" alt="Thank You"></h1>
+        <p>Thank you for contacting us. We will get in touch with you soon.</p>
+        <a href="index.html">Back to Home</a>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<section class="footer">
+    <footer>
+        <div class="footContainer">
+            <div class="sec aboutUs">
+                <h2>About Us</h2>
+                <p>
+                    Prassan Tours & Travels, backed by 15+ years of industry expertise, offers 24/7 services with well-trained staff and a meticulously maintained fleet. Our English-speaking chauffeurs ensure a smooth and knowledgeable travel experience. Operating from a centralized hub in Bangalore, we provide short and long-term rentals for multinational corporations and government entities. Committed to excellence, we specialize in end-to-end car rental solutions, setting benchmarks for punctuality, quality, and customer satisfaction.
+                </p>
+                <!-- Social Media Links -->
+                <ul class="social">
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+            <div class="sec quickLinks">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <!-- Contact -->
+            <div class="sec contact">
+                <h2>Contact Info</h2>
+                <ul class="info">
+                    <li>
+                    <span><i class="fa-solid fa-map-location-dot"></i></span>
+                    <span>Shop No. 7, Vijaya Lakshmi complex, kurudu Sonnenahalli Main Road, Vigronagar Post, Seegehalli, Bengaluru- 560049. Karnataka</span>
+                </li>
+                <li>
+                    <span><i class="fa-solid fa-square-phone"></i></span>
+                    <p><a href="tel:7619213035">+91 7619213035</a> <br>
+                       <a href="tel:7619213036">+91 7619213036</a><br>
+                       <a href="tel:7619213037">+91 7619213037</a></p>
+                </li>
+                <li>
+                    <span><i class="fa-solid fa-envelope"></i></span>
+                    <p><a href="mailto:info@prassantravels.in">info@prassantravels.in</a></p>
+                </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sec businessHours">
+            <h2>Business Hours</h2>
+            <p>Monday - Sunday <br>
+                07:00 am - 11:00 pm <br>
+                We are open 24/7 for Bookings.</p>
+        </div>
+    </footer>
+    <div class="copyrightText">
+        <p>Copyright © 2023 Prassan Tours & Travels, All Right Reserved.</p>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+    hamburger = document.querySelector(".hamburger");
+    hamburger.onclick = function(){
+        navBar = document.querySelector(".navBar");
+        navBar.classList.toggle("tog");
+    }
+    $(document).ready(function() {
+          $('.carousel').carousel({
+              pause: 'none'
+          });
+    });
+</script>
+</body>
+</html>
+
+

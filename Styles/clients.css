@@ -1,0 +1,317 @@
+/* Global Styles */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+/* Scroll Reveal Animation */
+.reveal{
+    position: relative;
+    transform:translateY(100px);
+    opacity:0;
+    transition: all 1.2s ease;
+}
+.reveal.see{
+    transform:translateY(0);
+    opacity:1;
+}
+/* Header */
+.header{
+    background: #111;
+}
+.header header{
+    width:100%;
+    height:120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 60px ;
+}
+.header header .logo img{
+    width:100px;
+    border-radius: 50%;
+}
+.header header .hamburger{
+    display:none;
+}
+.header header .navBar ul{
+    display: flex;
+}
+.header header .navBar ul li a{
+    display:block;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 50px;
+    transition: 0.2s;
+    margin:0 5px;
+    text-decoration:none;
+
+}
+.header header .navBar ul li a:hover{
+    font-weight: 500;
+    color: #000;
+    background: #8edbff;
+}
+.header header .navBar ul li a.active{
+    color: #000;
+    background: #8edbff;
+}
+
+/* Header Image */
+.headerImage {
+    position: relative;
+    overflow:hidden;
+    background: #111;
+}
+
+.headerImage img {
+    width: 100%;
+    max-height: 50vh;
+    object-fit: cover;
+}
+.headerImage:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1; 
+}
+
+/* Text Over Image */
+.headerImage .imageText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white; 
+    z-index: 2;
+}
+
+.headerImage .imageText h1 {
+    font-size: 32px; 
+    margin-bottom: 10px;
+}
+
+
+.headerImage .imageText p {
+    font-size: 24px; 
+    margin: 0;
+}
+
+
+
+/* Footer */
+.footer{
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+footer{
+    position:relative;
+    width:100%;
+    height:auto;
+    padding:50px 100px;
+    display: flex;
+    background: #111;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+footer .footContainer{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    flex-wrap: wrap;
+}
+footer .footContainer .sec{
+    margin-right: 30px;
+}
+footer .footContainer .sec.aboutUs{
+    width:45%;
+}
+footer h2{
+    position:relative;
+    color:#fff;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+footer h2:before{
+   content:'';
+   position:absolute;
+   bottom:-5px;
+   left:0;
+   width:50px;
+   height: 2px;
+   background: #8edbff;
+   border-radius: 100px;
+}
+footer p{
+    color:#999;
+}
+footer .footContainer .social{
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+footer .footContainer .social li a{
+    display: inline-block;
+    width:40px;
+    height:40px;
+    border-radius: 10px;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer .footContainer .social li a i{
+    color: #fff;
+    font-size: 20px;
+}
+footer .footContainer .social li a:hover{
+    background-color:#8edbff;
+}
+footer .footContainer .social li a:hover i{
+    color:#000;
+}
+/* QuickLinks - Footer */
+footer .footContainer .quickLinks{
+    position: relative;
+    width:25%;
+}
+footer .footContainer .quickLinks ul li a{
+    color: #999;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+footer .footContainer .quickLinks ul li a:hover{
+    color: #fff;
+}
+/* Contact - Footer */
+footer .footContainer .contact{
+    width: calc(30% - 60px);
+    margin-right: 0px !important;
+}
+footer .footContainer .contact .info{
+    position: relative;
+
+}
+footer .footContainer .contact .info li{
+    display: flex;
+    margin-bottom: 16px;
+}
+footer .footContainer .contact .info li span:nth-child(1){
+    color: #fff;
+    font-size: 20px;
+    margin-right: 10px;
+}
+footer .footContainer .contact .info li span,footer a{
+    color:#999;
+}
+footer .footContainer .contact .info li a:hover{
+    color:#fff;
+}
+footer .businessHours{
+    margin-top: 20px;
+}
+.copyrightText{
+    width: 100%;
+    background: #181818;
+    color:#fff;
+    font-weight: 500;
+    padding: 8px 100px;
+    text-align: center;
+}
+
+/* Responsiveness */
+@media (max-width:991px){
+    /* Header */
+    .header header .hamburger{
+        display: block;
+        cursor: pointer;
+    }
+    .header header .hamburger .line{
+        width: 30px;
+        height: 3px;
+        border-radius: 50px;
+        background: #fff;
+        margin: 6px 0;
+    }
+    .header header .navBar{
+        z-index: 111111;
+        height:0;
+        position:absolute;
+        top:100px;
+        left:0;
+        right: 0;
+        width:100vw;
+        background:#111;
+        transition: 0.3s;
+    }
+    .header header .navBar.tog{
+        height: 450px;
+    }
+    .header header .navBar ul{
+        display: none;
+        text-align: center;
+        justify-content: center;
+        width: fit-content;
+        margin: 80px auto 0 auto;
+        transition: 0.5s ease-in-out;
+    }
+    .header header .navBar.tog ul{
+        display:block;
+    }
+    .header header .navBar ul li a{
+        margin-bottom: 12px;
+    }
+
+    /* Footer */
+    footer{
+        padding: 40px;
+    }
+    footer .footContainer{
+        flex-direction: column;
+    }
+    footer .footContainer .sec{
+        margin-bottom: 40px;
+        margin-right: 0px;
+    }
+    footer .footContainer .sec.aboutUs,footer .footContainer .quickLinks{
+        width:100%;
+    }
+    footer .footContainer .sec.contact{
+        width:100%;
+    }
+    footer .businessHours{
+    margin-top: 0px;
+}
+.copyrightText{
+    padding: 8px 40px;
+}
+}
+@media (max-width:401px){
+    /* Header */
+    .header header{
+        padding: 20px;
+    }
+    .header header .logo img{
+        width:90px;
+    }
+    /* Header Image */
+    .headerImage .imageText h1 {
+        font-size: 24px; 
+    }
+    
+    .headerImage .imageText p {
+        font-size: 16px; 
+    }
+}
